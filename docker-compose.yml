@@ -13,8 +13,8 @@ services:
     build: ./frontend
     container_name: frontend
     network_mode: host
-    environment:
-      - BACKEND_URL=http://localhost:7860
+    extra_hosts:
+      - "backend:127.0.0.1"
     depends_on:
       backend:
         condition: service_healthy
